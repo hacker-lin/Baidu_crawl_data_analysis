@@ -1,0 +1,76 @@
+version: "3.7"
+services:
+  frontend:
+    build: ./frontend
+    volumes:
+      - data:/usr/src/app/frontend
+    environment:
+      - HOST=0.0.0.0
+    ports:
+      - "80:3000"
+    expose:
+      - "3000"
+      - "80"
+    command:  npm run dev -- --hostname 0.0.0.0 --port 3000
+    networks:
+#     vue-sanic:
+      vue-django:
+    depends_on:
+      - backend
+ #     - sanic
+
+  backend:
+    build: ./backend
+    volumes:
+      - data:/usr/src/app/backend
+    ports:
+      - "8000:8000"
+    command: python BaiduOnline/manage.py runserver 0.0.0.0:8000
+    tty: true
+    stdin_open: true
+    networks:
+      vue-django:
+      django-mysql:
+    depends_on:
+      - db
+  db:
+    build: ./db
+    volumes:
+      - data:/var/lib/mysql:rw
+    user: mysql
+    expose:
+      - "3306"
+    networks:
+      django-mysql:
+
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=dev_nuxt_django_pw
+#      - MYSQL_DATABASE=dev_nuxt_django_db
+#  sanic:
+#    build: ./sanic
+#    volumes:
+#      - data:/usr/src/app/sanic/chatbot_web/
+#    ports:
+#      - "5000:5000"
+#    expose:
+#      - "5000"
+#    command: python chatbot_web/predict_web.py 
+#    networks:
+#      vue-sanic:
+#    tty: true
+#    stdin_open: true
+
+volumes:
+  data:
+
+networks:
+  vue-django:
+   driver: bridge
+#  vue-sanic:
+#   driver: bridge
+  django-mysql:
+   driver: bridge
+
+
+
+

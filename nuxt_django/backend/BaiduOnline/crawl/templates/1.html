@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1px">
+    {% for foo in content %}
+        <tr>
+            <td>{{ foo.id }}</td>
+            <td>{{ foo.question }}</td>
+            <td>{{ foo.answer }}</td>
+            <td>{{ foo.third_id }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

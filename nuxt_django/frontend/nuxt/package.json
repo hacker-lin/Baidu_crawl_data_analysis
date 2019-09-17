@@ -1,0 +1,28 @@
+{
+  "name": "zhidao",
+  "version": "1.0.0",
+  "description": "My classy Nuxt.js project",
+  "author": "Cython_lin",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "basic-vue-chat": "^0.3.5",
+    "better-scroll": "^1.15.2",
+    "cross-env": "^5.2.0",
+    "element-ui": "^2.7.2",
+    "highcharts": "^6.1.1",
+    "highcharts-vue": "^1.2.0",
+    "nuxt": "^2.4.0",
+    "vue-loading-spinner": "^1.0.11"
+  },
+  "devDependencies": {
+    "element-theme-dark": "^1.0.3",
+    "nodemon": "^1.18.9"
+  }
+}
