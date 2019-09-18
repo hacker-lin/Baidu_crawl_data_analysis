@@ -11,3 +11,16 @@ The Project is about the BaiduZhidao's Crawler. Theere are five Docker Service:
 
 # Deployment
 1 docker-compose.yaml + 5 Dockerfile
+
+# Run Command
+first, start all services.
+  docker-compose up -d 
+second, send the spider code to the scrapyd(also in docker)
+  docker-compose exec crawl  scrapyd-deploy Cython_lin -p Baidu
+  
+# Notice
+Because the github platform is support 100MB (max)
+But MyCode is 1.2 GB (include data and Model)
+Im sorry that I cant commit the total code.
+But you can learn the the project's structure of the docker&docker-compose service.
+
