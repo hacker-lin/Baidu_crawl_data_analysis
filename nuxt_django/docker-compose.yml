@@ -49,12 +49,7 @@ services:
     ports:
       - "6800:6800"
 
-    command:
-      - /bin/bash 
-      - -c 
-      - |
-        scrapyd
-        scrapyd-deploy Cython_lin -p Baidu
+    command: scrapyd
         
 
 
