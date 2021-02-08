@@ -26,7 +26,7 @@ djangorestframework-simplejwt==4.1.5
 et-xmlfile==1.0.1
 fake-useragent==0.1.11
 future==0.17.1
-httplib2==0.9.2
+httplib2==0.19.0
 hyperlink==18.0.0
 idna==2.8
 incremental==17.5.0
